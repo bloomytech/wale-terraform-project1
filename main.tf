@@ -8,7 +8,7 @@ enable_dns_hostnames = true
 enable_dns_support = true
 
   tags = {
-  Name = "fragile-vpc"
+  Name = "Waletf-vpc"
 }
 }
 resource "aws_internet_gateway" "demotf_igw" {
@@ -56,7 +56,7 @@ variable "instance_keypair" {
   sensitive = true
 }
 resource "aws_instance" "demo_instance" {
-ami           = "ami-0f34c5ae932e6f0e4"
+ami           = "ami-04cb4ca688797756f"
 instance_type = "t2.micro"
 subnet_id     = aws_subnet.demotf_subnet.id
 key_name = var.instance_keypair
@@ -64,6 +64,6 @@ vpc_security_group_ids = [aws_security_group.demotf_security_group.id]
 associate_public_ip_address = true
 
 tags = {
-  Name = "fragile-instance"
+  Name = "Waletf-instance"
 }
 }
